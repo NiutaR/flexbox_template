@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $font-main;
+    font-size: $font-size;
+    line-height: 1.5em;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: $xl;
+    margin: 0 auto;
+    transition: opacity 1s ease 0s;
+    opacity: 1;
+    background-color: $color-warning;
+    background-image: url("../img/global-bg.jpg");
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    @include lg-min {
+        padding: 0 $gap;
+    }
+    @include lg {
+        padding: 0 $gap / 2;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $color-light;
+    &:hover,
+    &:focus {
+        color: $color-accent;
+    }
+}
+
+p {
+    color: $color-gray;
+}
+
+.container {
+    display: flex;
+    @include lg {
+        flex-wrap: wrap;
+    }
+}
+
+.img-responsive {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}

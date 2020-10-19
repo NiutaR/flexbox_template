@@ -1,0 +1,87 @@
+.header-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include bg-color(0.3);
+    &__list {
+        @include unlist;
+        @include sm-min {
+            display: flex;
+        }
+        @include sm {
+            display: none;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+        &.active {
+            display: flex;
+            flex-direction: column;
+        }
+        &-item {
+            @include sm {
+                &:last-child {
+                    margin-bottom: 5px;
+                }
+            }
+            a {
+                display: block;
+                margin: 5px;
+                padding: 10px 15px;
+                border-radius: 4px;
+                @include sm {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                &:hover,
+                &:focus {
+                    color: $color-accent;
+                    @include bg-color(0.3);
+                    @include text-shadow;
+                }
+            }
+            &.active a {
+                color: $color-accent-dark;
+                @include bg-color(0.4);
+                @include text-shadow;
+            }
+        }
+    }
+}
+
+.header-menu__btn {
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    @include bg-color(0.2);
+    @include sm-min {
+        display: none;
+    }
+    @include sm {
+        display: flex;
+    }
+    &-row {
+        position: relative;
+        width: 60%;
+        height: 2px;
+        margin: 2px 0;
+        transition: 0.5s;
+        background-color: $color-light;
+    }
+    &.active .header-menu__btn-row {
+        &:first-child {
+            top: 6px;
+            transform: rotate(-135deg);
+        }
+        &:last-child {
+            top: -6px;
+            transform: rotate(-225deg);
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+    }
+}

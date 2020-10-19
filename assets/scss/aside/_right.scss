@@ -1,0 +1,20 @@
+.right {
+    order: 3;
+    @include lg-min {
+        flex: 0 0 $right-sidebar-width;
+        margin-bottom: $gap / 2;
+        .widget-news {
+            width: $right-sidebar-width;
+        }
+    }
+    @include lg-md {
+        width: 100%;
+    }
+    @include md-xs {
+        width: 50%;
+        padding-left: $gap / 4;
+    }
+    @include xs {
+        width: 100%;
+    }
+}
